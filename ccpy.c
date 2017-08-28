@@ -25,13 +25,13 @@ int CallPythonFile(const char *py_file_path) {
 
     FILE *fp = fopen(py_file_path, "r");
     if (fp == NULL) {
-        Py_FinalizeEx();
+        Py_Finalize();
         return CCPY_ERR_FILE_NOT_FOUND;
     }
 
     int iRet = PyRun_SimpleFileEx(fp, py_file_path, 1);
 
-    Py_FinalizeEx();
+    Py_Finalize();
 
     if (iRet == 0)
         return CCPY_ERR_SUCCESS;
@@ -49,7 +49,7 @@ int CallPythonFunc(const char *py_file_path, const char *func_name, const char *
 
     pName = PyUnicode_FromString(py_file_path);
     if (pName == NULL) {
-        Py_FinalizeEx();
+        Py_Finalize();
         return CCPY_ERR_FAIL;
     }
 
@@ -82,23 +82,23 @@ int CallPythonFunc(const char *py_file_path, const char *func_name, const char *
                 Py_XDECREF(pModule);
                 PyErr_Print();
 
-                Py_FinalizeEx();
+                Py_Finalize();
                 return CCPY_ERR_FAIL;
             }
         } else {
             if (PyErr_Occurred())
                 PyErr_Print();
-            Py_FinalizeEx();
+            Py_Finalize();
             return CCPY_ERR_FUNC_NOT_FOUND;
         }
         Py_XDECREF(pFunc);
         Py_XDECREF(pModule);
     } else {
         PyErr_Print();
-        Py_FinalizeEx();
+        Py_Finalize();
         return CCPY_ERR_FILE_NOT_FOUND;
     }
 
-    Py_FinalizeEx();
+    Py_Finalize();
     return CCPY_ERR_SUCCESS;
 }
