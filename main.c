@@ -17,7 +17,6 @@ int main(int argc, char *argv[]) {
     char *input = "{\"no\": 1, \"name\": \"Runoob\", \"url\": \"http://www.runoob.com\"}";
     char output[CCPY_MAX_BUFSIZE] = "";
     CallPythonFunc("test001", "test_func2", input, output);
-    printf("output = %s\n", output);
 
     return 0;
 }

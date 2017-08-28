@@ -1,5 +1,6 @@
 /*
  * Call python file or python function from C.
+ * (for python3 only. tested on python3.6.2)
  *
  * Created by yanwei on 18/08/2017.
  */

@@ -22,11 +22,12 @@ def test_func1():
 
 def test_func2(json_in):
     print('this is test_func2')
-    print('input = ', json_in)
+    print('input =', json_in)
     data = json.loads(json_in)
     data['no'] = 2  # modify a key-value pair
     data['a'] = 'b'  # add a new key-value pair
     json_out = json.dumps(data)
+    print('output =', json_out)
     return json_out
 
 
