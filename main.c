@@ -11,11 +11,13 @@ int main(int argc, char *argv[]) {
     // test call python file
     CallPythonFile(py_file);
 
+    printf("========================================\n");
+
     // test call python function
     char *input = "{\"no\": 1, \"name\": \"Runoob\", \"url\": \"http://www.runoob.com\"}";
     char output[CCPY_MAX_BUFSIZE] = "";
     CallPythonFunc("test001", "test_func2", input, output);
-    printf("output = %s", output);
+    printf("output = %s\n", output);
 
     return 0;
 }
