@@ -15,9 +15,6 @@
 
 #define CCPY_MAX_BUFSIZE            10240
 
-//int TestPython1(int argc, char *argv[]);
-//int TestPython2(int argc, char *argv[]);
-
 /*
  * Call this function before calling any other functions.
  *
