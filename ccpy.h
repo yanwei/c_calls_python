@@ -1,6 +1,7 @@
 /*
  * Call python file or python function from C.
  * Support both python2.7 and python3.6
+ * Define USE_PYTHON_3 if you want to use python3.6, otherwise use python2.7 by default.
  *
  * Created by yanwei on 18/08/2017.
  */
