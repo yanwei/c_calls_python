@@ -27,7 +27,6 @@ def test_func2(json_in):
     data['no'] = 2  # modify a key-value pair
     data['a'] = 'b'  # add a new key-value pair
     json_out = json.dumps(data)
-    print('output =', json_out)
     return json_out
 
 

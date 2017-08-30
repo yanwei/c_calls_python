@@ -1,6 +1,6 @@
 /*
  * Call python file or python function from C.
- * (for python3 only. tested on python3.6.2)
+ * Support both python2.7 and python3.6
  *
  * Created by yanwei on 18/08/2017.
  */
@@ -22,7 +22,11 @@
  * main_program_path: pass argv[0] of the main program to this argument.
  * python_path: path where the python files is stored
  */
+#ifdef USE_PYTHON_3
 int CallPythonInit(const char *main_program_path, const char *python_path);
+#else
+int CallPythonInit(char *main_program_path, const char *python_path);
+#endif
 
 /*
  * Execute a python(.py) file without any input or output data.
